@@ -5,7 +5,7 @@ import numpy as np
 import cv2
 
 
-class CyberpankBot:
+class CyberpunkBot:
     def __init__(self):
         self.game_window = pyautogui.getWindowsWithTitle('Cyberpunk 2077 (C) 2020 by CD Projekt RED')[0]
 
@@ -87,7 +87,7 @@ class CyberpankBot:
 
 
 def main():
-    bot = CyberpankBot()
+    bot = CyberpunkBot()
     bot.start_selling_untitled18(10)
 
 

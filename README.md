@@ -1,4 +1,4 @@
-# This bot exploits a bug with Untitled 18 painting in Cyberpank 2077 game.
+# This bot exploits a bug with Untitled 18 painting in Cyberpunk 2077 game.
 Hotfix 1.05 still has this bug. But CD Projects knows about it.
 
 More info about this bug is on [prodigygamers](https://prodigygamers.com/2020/12/15/cyberpunk-2077-unlimited-money-glitch-cheat-space-oddity-guide/)
