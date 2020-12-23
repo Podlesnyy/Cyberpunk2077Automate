@@ -1,0 +1,5 @@
+Pillow==8.0.1
+PyAutoGUI==0.9.52
+PyDirectInput==1.0.3
+numpy==1.19.3
+opencv-python==4.4.0.46
