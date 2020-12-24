@@ -9,6 +9,6 @@ You can do it yourself but it's boring)
 * You should have Untitled 18 painting in your inventory
 * Choose window bordrerless mode
 * Find any drop point
-* Stand in front so that the message "Press F" appears
+* Stand in front so that the message "Press R" appears
 * Run bot
 * The bot will sell painting 100 times
