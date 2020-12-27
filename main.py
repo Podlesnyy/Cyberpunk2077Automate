@@ -29,6 +29,7 @@ class CyberpunkBot:
     def start_selling_untitled18(self, count):
         self.__setup_game_window()
         for i in range(count):
+            print(f'{i}/{count}')
             if i % 5 == 0:
                 self.sleep_24_hours()
             self.sell_and_buy_untitled18()
@@ -49,9 +50,9 @@ class CyberpunkBot:
         filter_all_items_point = self.__get_template_location(screen, image)
         pydirectinput.moveRel(int(filter_all_items_point[0] - cursor_pos[0]),
                               int(filter_all_items_point[1] - cursor_pos[1]), relative=True)
-        time.sleep(0.5)
+        time.sleep(1)
         pydirectinput.click()
-        time.sleep(0.3)
+        time.sleep(1)
 
     @staticmethod
     def __get_screen():
@@ -66,17 +67,19 @@ class CyberpunkBot:
         return min_loc
 
     def sleep_24_hours(self):
+        print("Sleep for 24 hours")
         self.__setup_game_window()
         self.press_key('I')
         self.__click_on(self.wait_button_rus_image)
         self.__click_on(self.left_button_image)
         pydirectinput.moveRel(0, 50, relative=True)
-        time.sleep(0.5)
+        time.sleep(1)
         self.press_key('F')
         self.press_key('ESC')
-        time.sleep(15)  # due to biochip glitching
+        time.sleep(5)  # due to biochip glitching
 
     def sell_and_buy_untitled18(self):
+        print("Sell and buy")
         self.press_key('R')
         self.__click_on(self.filter_all_items_image)
         self.__click_on(self.untitled18_image)
@@ -85,10 +88,41 @@ class CyberpunkBot:
         self.__click_on(self.untitled18_image)
         self.press_key('ESC')
 
+    def start_selling_untitled18_5_at_once(self, count):
+        self.__setup_game_window()
+        for i in range(count):
+            print(f'{i}/{count}')
+            self.sleep_24_hours()
+            self.sell_and_buy_untitled18_5_at_once()
+
+    def sell_and_buy_untitled18_5_at_once(self):
+        print("Sell and buy")
+        self.press_key('R')
+        self.__click_on(self.filter_all_items_image)
+        self.select_unt18_5_times()
+        self.press_key('R')
+        self.select_unt18_5_times()
+
+    def select_unt18_5_times(self):
+        self.__click_on(self.untitled18_image)
+        self.press_key('right')
+        self.press_key('right')
+        self.press_key('right')
+        self.press_key('right')
+        self.press_key('right')
+        self.press_key('tab')
+        self.press_key('esc')
+
+    def run_dublicate_key_combination(self):
+        self.__setup_game_window()
+        self.press_key(['R', 'esc'])
+
 
 def main():
     bot = CyberpunkBot()
-    bot.start_selling_untitled18(10)
+    # bot.start_selling_untitled18(500)
+    #bot.start_selling_untitled18_5_at_once(500)
+    bot.run_dublicate_key_combination()
 
 
 if __name__ == '__main__':
