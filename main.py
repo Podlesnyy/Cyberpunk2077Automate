@@ -14,6 +14,7 @@ class CyberpunkBot:
         self.untitled18_image = self.load_image('untitled18.jpg')
         self.left_button_image = self.load_image('left_button.jpg')
         self.wait_button_rus_image = self.load_image('wait_button_rus.jpg')
+        self.__setup_game_window()
 
     @staticmethod
     def load_image(image_file_name):
@@ -117,12 +118,21 @@ class CyberpunkBot:
         self.__setup_game_window()
         self.press_key(['R', 'esc'])
 
+    @staticmethod
+    def craft_armodillo(count):
+        for i in range(count):
+            print(f'{i}/{count}')
+            pydirectinput.mouseDown()
+            time.sleep(2)
+            pydirectinput.mouseUp()
+
 
 def main():
     bot = CyberpunkBot()
     # bot.start_selling_untitled18(500)
     #bot.start_selling_untitled18_5_at_once(500)
-    bot.run_dublicate_key_combination()
+    #bot.run_dublicate_key_combination()
+    bot.craft_armodillo(200)
 
 
 if __name__ == '__main__':
