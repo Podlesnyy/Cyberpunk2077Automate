@@ -1,3 +1,4 @@
+import keyboard
 import pyautogui
 import pydirectinput
 import time
@@ -110,7 +111,7 @@ class CyberpunkBot:
         self.press_key('right')
         self.press_key('right')
         self.press_key('right')
-        self.press_key('right')
+        # self.press_key('right')
         self.press_key('tab')
         self.press_key('esc')
 
@@ -126,13 +127,30 @@ class CyberpunkBot:
             time.sleep(2)
             pydirectinput.mouseUp()
 
+    @staticmethod
+    def speed_up(_):
+        pydirectinput.mouseDown(button=pydirectinput.RIGHT)
+        pyautogui.keyDown('w')
+        pyautogui.keyUp('w')
+        pyautogui.keyDown('w')
+        pydirectinput.mouseUp(button=pydirectinput.RIGHT)
+        for i in range(5):
+            pyautogui.keyDown('c')
+            pyautogui.keyUp('c')
+
+    def kerenzikov_speed_glitch(self):
+        print("Start speed")
+        keyboard.on_press_key('g', self.speed_up)
+        keyboard.wait()
+
 
 def main():
     bot = CyberpunkBot()
     # bot.start_selling_untitled18(500)
-    #bot.start_selling_untitled18_5_at_once(500)
-    #bot.run_dublicate_key_combination()
-    bot.craft_armodillo(200)
+    # bot.start_selling_untitled18_5_at_once(5000)
+    # bot.run_dublicate_key_combination()
+    # bot.craft_armodillo(200)
+    bot.kerenzikov_speed_glitch()
 
 
 if __name__ == '__main__':
